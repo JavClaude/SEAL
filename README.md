@@ -49,7 +49,7 @@ X = pd.DataFrame(X)
 y = pd.Series(y)
 
 my_experiment = Experiment("demo_use_case", problem="classification")
-my_experiment.build(X, y, metric_to_optimize="roc_auc", metrics_to_track=["accuracy"], hyperopt_split_strat=KFold(4))
+my_experiment.build(X, y, metric_to_optimize="roc_auc", metrics_to_track=["accuracy"], hyperopt_splitting_strategy=KFold(4))
 
 my_run = my_experiment.start_run()
 print(my_run.model.get_models_with_weights())
